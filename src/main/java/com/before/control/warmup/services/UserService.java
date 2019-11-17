@@ -12,4 +12,6 @@ public interface UserService {
     ArrayList<User> getAllUsers();
 
     void createAdminAndUser();
+
+    User verify(String login, String password);
 }

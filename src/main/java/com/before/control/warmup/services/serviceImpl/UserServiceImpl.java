@@ -31,16 +31,29 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void createAdminAndUser() {
-        User admin=new User();
-        admin.setRole("ADMIN");
-        admin.setLogin("ADMIN");
-        admin.setPassword("ADMIN");
-        userRepository.save(admin);
+        ArrayList<User> users = (ArrayList<User>) userRepository.findAll();
+        if (users.size() == 0) {
+            User admin = new User();
+            admin.setRole("ADMIN");
+            admin.setLogin("ADMIN");
+            admin.setPassword("ADMIN");
+            userRepository.save(admin);
 
-        User user=new User();
-        user.setRole("USER");
-        user.setLogin("USER");
-        user.setPassword("USER");
-        userRepository.save(user);
+            User user = new User();
+            user.setRole("USER");
+            user.setLogin("USER");
+            user.setPassword("USER");
+            userRepository.save(user);
+        }
+    }
+
+    @Override
+    public User verify(String login, String password) {
+        ArrayList<User> users = (ArrayList<User>) userRepository.findAllByLogin(login);
+
+        if (users.size() > 0 && users.get(0).getPassword().equals(password)) {
+            return users.get(0);
+        }
+        return null;
     }
 }

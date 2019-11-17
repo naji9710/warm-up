@@ -13,4 +13,6 @@ public interface StudentService {
     void save(Student student);
 
     ArrayList<Student> getAllStudents();
+
+    void deleteStudent(Long id);
 }

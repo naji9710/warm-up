@@ -32,4 +32,9 @@ public class StudentServiceImpl implements StudentService {
     public ArrayList<Student> getAllStudents() {
         return (ArrayList<Student>) studentRepository.findAll();
     }
+
+    @Override
+    public void deleteStudent(Long id) {
+        studentRepository.deleteById(id);
+    }
 }

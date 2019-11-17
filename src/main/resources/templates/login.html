@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Log In</title>
+</head>
+<body>
+<div th:text="${bad}"></div>
+<form action="/login" method="post">
+    <div> You can use login: "ADMIN" and password: "ADMIN" to log in as an admin</div>
+    <div> You can use login: "USER" and password: "USER" to log in as a normal user</div><br><br>
+    <label>Login</label><br>
+    <input type="text" name="login"><br>
+    <label>Password</label><br>
+    <input type="password" name="password"><br>
+    <button type="submit">Log In</button><br>
+</form>
+<br>
+<a th:href="@{/createAccount}">Create new Account</a>
+</body>
+</html>

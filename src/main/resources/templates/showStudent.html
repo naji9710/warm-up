@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>student</title>
+
+</head>
+<body>
+<h1 style="align-content: center">Students</h1>
+
+<a th:href="@{/home}">Home</a><br>
+<a th:href="@{/home/students}">All Students</a><br>
+
+<label>Name</label><br>
+<h3 th:text="${student.name}" /><br>
+<label>Email</label><br>
+<h3 th:text="${student.email}" /><br>
+<label>Age</label><br>
+<h3 th:text="${student.age}" /><br>
+</body>
+</html>
