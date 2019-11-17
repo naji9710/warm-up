@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>students</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+<h1 style="align-content: center">Students</h1>
+
+<a th:href="${'/home/addStudent'}">Add a student</a>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Age</th>
+    </tr>
+    <tr th:each="student:${students}">
+
+        <td th:text="${student.name}" />
+        <td th:text="${student.email}" />
+        <td th:text="${student.age}" />
+    </tr>
+</table>
+</body>
+</html>
